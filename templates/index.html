@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAEOS TEAM</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="logo">KAEOS TEAM</div>
+        <ul class="nav-right">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#features">FEATURES</a></li>
+            <li><a href="#contact">CONTACT US</a></li>
+        </ul>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home" class="section hero">
+        <h1 class="main-title">KAEOS TEAM</h1>
+        <p class="subtitle">Hunting for Exoplanets</p>
+        <button id="getStartedBtn" class="cta" onclick="window.location.href='/analyze'">GET STARTED</button>
+        <button id="viewPlanetBtn" class="cta" onclick="window.location.href='/planet'">🌍 3D Planet Generator</button>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <div class="about-card">
+            <h2>WHAT WE DO</h2>
+            <div class="what-text">
+                <p>We develop an AI-powered educational platform that analyzes real NASA datasets (Kepler, K2, TESS) to detect and classify exoplanets. Users can upload observational data or manually enter parameters (orbital period, transit duration, planetary radius, etc.) to get an AI classification: Confirmed Planet, Candidate, or False Positive. Visualizations, model accuracy stats, and easy educational explanations help both researchers and learners explore findings.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section">
+        <h2 class="main-title">Features & Data</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <h3>🔭 Real NASA Data</h3>
+                <p>Support for Kepler, K2 and TESS datasets (open-source CSVs). Users can upload files for batch analysis.</p>
+            </div>
+            <div class="feature">
+                <h3>🤖 AI Analysis</h3>
+                <p>Machine learning pipelines preprocess transit variables, train models, and output classification probabilities.</p>
+            </div>
+            <div class="feature">
+                <h3>📊 Visualizations</h3>
+                <p>Interactive charts, transit plots, and model accuracy dashboards to explain results visually.</p>
+            </div>
+            <div class="feature">
+                <h3>⚙ User Controls</h3>
+                <p>Manual data entry, optional hyperparameter tuning, and downloadable result reports for researchers.</p>
+            </div>
+            <div class="feature">
+                <h3>🎓 Educational Content</h3>
+                <p>Lesson plans, videos, and explanation widgets that simplify exoplanet science for students.</p>
+            </div>
+            <div class="feature">
+                <h3>🌍 Habitability Focus</h3>
+                <p>Special modules that highlight habitability indicators and prioritize promising candidates.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <div class="contact-wrap">
+            <div class="emails">
+                <h3>Contact Us</h3>
+                <div class="email-item">📧 amalosama739@gmail.com</div>
+                <div class="email-item">📧 alaaessam446@gmail.com</div>
+                <div class="email-item">📧 ahmedforedu@gmail.com</div>
+                <div class="email-item">📧 kareem.fahme06@eng-st.cu.edu.eg</div>
+                <div class="email-item">📧 omargamalhamed8@gmail.com</div>
+            </div>
+            <div class="form-card">
+                <h3>Send us a message</h3>
+                <form id="contactForm">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="tel" id="phone" placeholder="Your Phone">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit" class="send-btn">Send Message</button>
+                    <div id="formMsg" class="form-msg"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        © 2025 KAEOS TEAM — Built for NASA Space Apps Challenge
+    </footer>
+
+    <!-- 🧠 AI Chat Assistant -->
+    <div id="chatbot">
+      <div id="chat-header">🪐 KAEOS Assistant</div>
+      <div id="chat-body"></div>
+      <div id="chat-input">
+        <input type="text" id="chatMessage" placeholder="Ask me anything..." />
+        <button id="sendChat">Send</button>
+      </div>
+    </div>
+
+    <style>
+    #chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background: rgba(0, 0, 30, 0.95);
+      border-radius: 10px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+      z-index: 1000;
+    }
+    #chat-header {
+      background: #0066cc;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+    #chat-body {
+      padding: 10px;
+      height: 250px;
+      overflow-y: auto;
+    }
+    #chat-input {
+      display: flex;
+      border-top: 1px solid #333;
+    }
+    #chat-input input {
+      flex: 1;
+      background: #111;
+      color: white;
+      border: none;
+      padding: 10px;
+      outline: none;
+    }
+    #chat-input button {
+      background: #0066cc;
+      border: none;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .user-msg { text-align: right; margin: 5px 0; color: #00ffcc; }
+    .bot-msg { text-align: left; margin: 5px 0; }
+    </style>
+
+    <script>
+    const chatBody = document.getElementById("chat-body");
+    const chatInput = document.getElementById("chatMessage");
+    const sendBtn = document.getElementById("sendChat");
+
+    function appendMessage(sender, text) {
+      const div = document.createElement("div");
+      div.className = sender === "user" ? "user-msg" : "bot-msg";
+      div.textContent = text;
+      chatBody.appendChild(div);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    sendBtn.addEventListener("click", sendMessage);
+    chatInput.addEventListener("keypress", e => { if (e.key === "Enter") sendMessage(); });
+
+    function sendMessage() {
+      const msg = chatInput.value.trim();
+      if (!msg) return;
+      appendMessage("user", msg);
+      chatInput.value = "";
+
+      fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: msg })
+      })
+      .then(res => res.json())
+      .then(data => appendMessage("bot", data.response))
+      .catch(err => appendMessage("bot", "⚠️ Error: " + err.message));
+    }
+    </script>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exoplanet Analysis - KAEOS TEAM</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/secondpage.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <button id="backBtn" class="back-btn">⬅ Back to Home</button>
+
+    <h1 class="highlight">🔭 Exoplanet Analysis</h1>
+    <p>Upload your dataset or enter manually and see the results!</p>
+
+    <div class="upload-container">
+        <button id="importBtn">Import Data</button>
+        <div id="importOptions" style="display:none;">
+            <button id="manualBtn" class="option-btn">Manual</button>
+            <button id="fileBtn" class="option-btn">File</button>
+        </div>
+        <div id="fileTypeOptions" style="display:none;">
+            <button class="format-btn" data-format="csv">CSV</button>
+            <button class="format-btn" data-format="json">JSON</button>
+        </div>
+        <input type="file" id="csvFile" accept=".csv" style="display:none;">
+        <button id="analyzeBtn" class="analyze-btn" style="display:none;">Analyze</button>
+    </div>
+
+    <div class="upload-model-container" style="margin:20px;">
+    <h2>⚙ Upload Your Own Model</h2>
+    <form id="modelUploadForm" enctype="multipart/form-data">
+        <input type="file" id="modelFile" name="file" accept=".pkl" required>
+        <button type="submit">Upload Model</button>
+    </form>
+    <div id="uploadMsg" style="margin-top:10px; color:yellow;"></div>
+</div>
+
+    <div id="manualTableContainer" style="display:none; margin:20px;">
+        <table id="manualTable">
+            <thead>
+                <tr>
+                    <th contenteditable="true">Planet Name</th>
+                    <th contenteditable="true">orbital_period (days)</th>
+                    <th contenteditable="true">planet_radius (Earth radii)</th>
+                    <th contenteditable="true">star_temp (K)</th>
+                    <th contenteditable="true">star_radius (Solar radii)</th>
+                    <th contenteditable="true">transit_depth (ppm)</th>
+                    <th contenteditable="true">transit_duration (hours)</th>
+                    <th contenteditable="true">equilibrium_temp (K)</th>
+                    <th contenteditable="true">star_logg</th>
+                    <th contenteditable="true">star_mass (Solar)</th>
+                    <th contenteditable="true">star_metallicity (dex)</th>
+                    <th contenteditable="true">signal_to_noise</th>
+                    <th contenteditable="true">insolation_flux</th>
+                    <th contenteditable="true">planet_mass_earth</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td contenteditable="true">Planet A</td>
+                    <td contenteditable="true">50</td>
+                    <td contenteditable="true">1.2</td>
+                    <td contenteditable="true">5800</td>
+                    <td contenteditable="true">1</td>
+                    <td contenteditable="true">300</td>
+                    <td contenteditable="true">2</td>
+                    <td contenteditable="true">290</td>
+                    <td contenteditable="true">4.44</td>
+                    <td contenteditable="true">1</td>
+                    <td contenteditable="true">0</td>
+                    <td contenteditable="true">10</td>
+                    <td contenteditable="true">1</td>
+                    <td contenteditable="true">1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <table id="previewTable" style="display:none; margin:20px;">
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+
+    <div id="results"></div>
+
+    <div style="margin:20px;">
+        <button id="exportPDFBtn" style="display:none;">Export PDF</button>
+        <button id="exportCSVBtn" style="display:none;">Export CSV</button>
+        <button id="exportJSONBtn" style="display:none;">Export JSON</button>
+    </div>
+
+    <div id="celebration" class="celebration" style="display:none;">✅</div>
+
+    <script src="{{ url_for('static', filename='js/secondpage.js') }}"></script>
+</body>
+</html>
