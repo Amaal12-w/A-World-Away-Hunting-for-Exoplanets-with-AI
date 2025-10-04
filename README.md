@@ -24,7 +24,7 @@ This project provides:
 - Upload your **own custom ML model** (`.pkl`) and use it for predictions.  
 
 📸 *Analysis Page*
-![Exoplanet Analysis Page](images\analysis_pagerl.jpg.png)
+![Image](https://github.com/user-attachments/assets/e414f42e-aedd-49fe-af73-ade782961c9d)
 
 ---
 
@@ -37,7 +37,7 @@ This project provides:
 - Export results as **PDF**, **CSV**, or **JSON**.  
 
 📸 *Results*
-![Results](images\results2.jpg)
+![Image](https://github.com/user-attachments/assets/a3683951-7456-4034-af7f-48a7ce2870a7)
 
 ---
 
@@ -47,14 +47,14 @@ This project provides:
 - Interactive visualization to explore planetary systems.  
 
 📸 *Plant generator*
-![Results](images\results2.jpg)
+![Image](https://github.com/user-attachments/assets/3a18295f-000b-4aa2-94d3-4845eb4856ba)
 ---
 
 ### 🤖 AI Chat Assistant
 - Chatbot built with **DialoGPT** for answering user questions.  
 - Integrated directly on the homepage for quick help.  
 
-📸 *[Insert Screenshot of Chatbot]*
+![Image](https://github.com/user-attachments/assets/4e5439bf-8048-42ae-933c-ade6e179a300)
 
 ---
 
@@ -62,7 +62,7 @@ This project provides:
 - Users can upload a `.pkl` model to replace the default ML pipeline.  
 - Immediate integration with the `/api/predict` endpoint.  
 
-📸 *[Insert Screenshot of Upload Model Section]*
+![Image](https://github.com/user-attachments/assets/63cec2d0-3ba1-4434-9c53-38fb6dd8dc2e)
 
 ---
 
