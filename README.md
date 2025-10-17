@@ -97,7 +97,7 @@ Visit 👉 `http://127.0.0.1:5000`
 ## 🎥 Demo Video
 
 You can watch the project demo video here:  
-[🔗 Watch the Demo](https://youtu.be/XXXXXXXXXXX)
+[🔗 Watch the Demo]((https://github.com/user-attachments/assets/7c832512-f187-4b52-b282-e5b1163097c5))
 
 > This video demonstrates how to use the project and its main features.
 
