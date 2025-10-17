@@ -94,6 +94,20 @@ python appbest.py
 Visit 👉 `http://127.0.0.1:5000`
 
 ---
+## 🎥 Demo Video
+
+You can watch the project demo video here:  
+[🔗 Watch the Demo](https://youtu.be/XXXXXXXXXXX)
+
+> This video demonstrates how to use the project and its main features.
+
+---
+
+### 📦 How to Run the Project
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/username/repo-name.git
 
 ## 📂 Project Structure
 ```
